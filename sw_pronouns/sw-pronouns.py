@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd 
 
 # Define the personal pronouns in English and Swahili along with audio links
 pronouns = {
@@ -73,4 +74,19 @@ for person, forms in pronouns.items():
         # Play audio for plural
         st.audio(forms["Plural"]["audio"])
 
-# Note: No submit button is needed since feedback is shown immediately
+# Accordion for the pronoun table
+# Accordion for the pronoun table
+with st.expander("Show Pronoun Table"):
+    # Create a DataFrame for the pronouns
+    pronoun_data = []
+    for person, forms in pronouns.items():
+        pronoun_data.append([person, forms["Singular"]["text"], forms["Plural"]["text"]])
+    
+    # Define column names
+    columns = ["Person", "Singular", "Plural"]
+    
+    # Create a DataFrame
+    df = pd.DataFrame(pronoun_data, columns=columns)
+    
+    # Display the pronoun table without index
+    st.dataframe(df, use_container_width=True, hide_index=True)
