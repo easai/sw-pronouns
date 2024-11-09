@@ -35,6 +35,75 @@ pronouns = {
     }
 }
 
+# pronouns_selectbox = st.sidebar.selectbox( "Pronouns", ("Independent", "Subject Concord Positive", "Subject Concord Negative"))
+
+# if pronouns_selectbox=="Subject Concord Positive":
+#     pronouns = {
+#         "1st Person": {
+#             "Singular": {
+#                 "text": "I (ni)",
+#                 "audio": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Sw-ke-mimi.flac"  # Replace with your actual FLAC file URL
+#             },
+#             "Plural": {
+#                 "text": "We (tu)",
+#                 "audio": "https://upload.wikimedia.org/wikipedia/commons/4/45/Sw-ke-sisi.flac"  # Replace with your actual FLAC file URL
+#             }
+#         },
+#         "2nd Person": {
+#             "Singular": {
+#                 "text": "You (u)",
+#                 "audio": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Sw-ke-wewe.flac"  # Replace with your actual FLAC file URL
+#             },
+#             "Plural": {
+#                 "text": "You (mu)",
+#                 "audio": "https://upload.wikimedia.org/wikipedia/commons/2/28/Sw-ke-ninyi.flac"  # Replace with your actual FLAC file URL
+#             }
+#         },
+#         "3rd Person": {
+#             "Singular": {
+#                 "text": "He/She (yu)",
+#                 "audio": "https://upload.wikimedia.org/wikipedia/commons/6/64/Sw-ke-yeye.flac"  # Replace with your actual FLAC file URL
+#             },
+#             "Plural": {
+#                 "text": "They (wa)",
+#                 "audio": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Sw-ke-wao.flac"  # Replace with your actual FLAC file URL
+#             }
+#         }
+#     }
+# elif pronouns_selectbox=="Subject Concord Negative":
+#     pronouns = {
+#         "1st Person": {
+#             "Singular": {
+#                 "text": "I (Mimi)",
+#                 "audio": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Sw-ke-mimi.flac"  # Replace with your actual FLAC file URL
+#             },
+#             "Plural": {
+#                 "text": "We (Sisi)",
+#                 "audio": "https://upload.wikimedia.org/wikipedia/commons/4/45/Sw-ke-sisi.flac"  # Replace with your actual FLAC file URL
+#             }
+#         },
+#         "2nd Person": {
+#             "Singular": {
+#                 "text": "You (Wewe)",
+#                 "audio": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Sw-ke-wewe.flac"  # Replace with your actual FLAC file URL
+#             },
+#             "Plural": {
+#                 "text": "You (Ninyi)",
+#                 "audio": "https://upload.wikimedia.org/wikipedia/commons/2/28/Sw-ke-ninyi.flac"  # Replace with your actual FLAC file URL
+#             }
+#         },
+#         "3rd Person": {
+#             "Singular": {
+#                 "text": "He (Yeye - mume) / She (Yeye - mke)",
+#                 "audio": "https://upload.wikimedia.org/wikipedia/commons/6/64/Sw-ke-yeye.flac"  # Replace with your actual FLAC file URL
+#             },
+#             "Plural": {
+#                 "text": "They (Wao)",
+#                 "audio": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Sw-ke-wao.flac"  # Replace with your actual FLAC file URL
+#             }
+#         }
+#     }
+
 # Streamlit app title
 st.title("Swahili Pronouns Quiz with Audio")
 
@@ -74,7 +143,7 @@ for person, forms in pronouns.items():
         # Play audio for plural
         st.audio(forms["Plural"]["audio"])
 
-# Accordion for the pronoun table
+
 # Accordion for the pronoun table
 with st.expander("Show Pronoun Table"):
     # Create a DataFrame for the pronouns
