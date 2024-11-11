@@ -50,7 +50,7 @@ def clear_inputs():
         with col2:
             st.session_state[f"plural_{person}"] = ''
 
-pronouns_selectbox = st.sidebar.selectbox( "Pronouns", ("Independent", "Subject Concord Positive", "Subject Concord Negative"), on_change=clear_inputs)
+pronouns_selectbox = st.sidebar.selectbox( "Pronouns", ("Independent", "Subject Concord Positive", "Subject Concord Negative", "Possessive"), on_change=clear_inputs)
 
 if pronouns_selectbox=="Subject Concord Positive":
     pronouns = {
@@ -130,6 +130,45 @@ elif pronouns_selectbox=="Subject Concord Negative":
             }
         }
     }
+elif pronouns_selectbox=="Possessive":
+    pronouns = {
+        "1st Person": {
+            "Singular": {
+                "text": "I (-angu)",
+                "answer": "angu",
+                "audio": ""  
+            },
+            "Plural": {
+                "text": "We (-etu)",
+                "answer":"etu",
+                "audio": ""  
+            }
+        },
+        "2nd Person": {
+            "Singular": {
+                "text": "You (-ako)",
+                "answer": "ako",
+                "audio": ""  
+            },
+            "Plural": {
+                "text": "You (-enu)",
+                "answer": "enu",
+                "audio": ""  
+            }
+        },
+        "3rd Person": {
+            "Singular": {
+                "text": "He/She (-ake)",
+                "answer": "ake",
+                "audio": ""  
+            },
+            "Plural": {
+                "text": "They (-ao)",
+                "answer": "ao",
+                "audio": ""  
+            }
+        }
+    }
 
 # Streamlit app title
 st.title("Swahili Pronouns Quiz with Audio")
@@ -188,3 +227,4 @@ with st.expander("Show Pronoun Table"):
     
     # Display the pronoun table without index
     st.dataframe(df, use_container_width=True, hide_index=True)
+
