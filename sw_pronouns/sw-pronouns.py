@@ -176,7 +176,7 @@ st.title("Swahili Pronouns Quiz with Audio")
 audio_html = f"""
 <style>
 .stAudio {{
-    height: 30px; /* Adjust the height as needed */
+    height: 30px; 
 }}
 </style>
 """
