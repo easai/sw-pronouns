@@ -50,7 +50,7 @@ def clear_inputs():
         with col2:
             st.session_state[f"plural_{person}"] = ''
 
-pronouns_selectbox = st.sidebar.selectbox( "Pronouns", ("Independent", "Subject Concord Positive", "Subject Concord Negative", "Possessive"), on_change=clear_inputs)
+pronouns_selectbox = st.sidebar.selectbox( "Pronouns Quizzes", ("Independent", "Subject Concord Positive", "Subject Concord Negative", "Object Concord", "Possessive"), on_change=clear_inputs)
 
 if pronouns_selectbox=="Subject Concord Positive":
     pronouns = {
@@ -165,6 +165,45 @@ elif pronouns_selectbox=="Possessive":
             "Plural": {
                 "text": "They (-ao)",
                 "answer": "ao",
+                "audio": ""  
+            }
+        }
+    }
+elif pronouns_selectbox=="Object Concord":
+    pronouns = {
+        "1st Person": {
+            "Singular": {
+                "text": "I (-ni-)",
+                "answer": "ni",
+                "audio": ""  
+            },
+            "Plural": {
+                "text": "We (-tu-)",
+                "answer":"tu",
+                "audio": ""  
+            }
+        },
+        "2nd Person": {
+            "Singular": {
+                "text": "You (-ku-)",
+                "answer": "ku",
+                "audio": ""  
+            },
+            "Plural": {
+                "text": "You (-wa-)",
+                "answer": "wa",
+                "audio": ""  
+            }
+        },
+        "3rd Person": {
+            "Singular": {
+                "text": "He/She (-m-)",
+                "answer": "m",
+                "audio": ""  
+            },
+            "Plural": {
+                "text": "They (-wa-)",
+                "answer": "wa",
                 "audio": ""  
             }
         }
