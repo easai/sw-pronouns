@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd 
+from swquiz import SWQuiz
 
 # Define the personal pronouns in English and Swahili along with audio links
 pronouns = {
@@ -269,28 +270,5 @@ with st.expander("Show Pronoun Table"):
 
 
 if pronouns_selectbox=="Independent":
-
-    # Define a list of pronouns with corresponding sentences and their English translations
-    pronouns = {
-        "Mimi": ("___ ni mwanafunzi.", "I am a student."),
-        "Wewe": ("___ ni daktari.", "You are a doctor."),
-        "Yeye": ("___ ni mwalimu.", "He/She is a teacher."),
-        "Sisi": ("___ tunapenda kujifunza.", "We love to learn."),
-        "Ninyi": ("___ mnaweza kusaidia.", "You all can help."),
-        "Wao": ("___ wanacheka.", "They are laughing.")
-    }
-
-    # Streamlit app layout
-    st.title("Check your knowledge")
-
-    # Create input fields for each pronoun
-    for pronoun, (sentence, translation) in pronouns.items():
-        st.write(translation)  # Show English translation
-        
-        user_answer = st.text_input(sentence, key=pronoun)
-        if user_answer:
-            if user_answer.strip().lower() == pronoun.lower():
-                st.success(f"Correct! The answer is '{pronoun}'.")
-            else:
-                st.error(f"Incorrect! The correct answer is '{pronoun}'.")
+    swquiz = SWQuiz()
 
