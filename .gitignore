@@ -1,0 +1,5 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+sw_pronouns/__pycache__/
+*.py[cod]
+*$py.class
