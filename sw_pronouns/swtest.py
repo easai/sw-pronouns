@@ -15,7 +15,7 @@ class SWTest:
         }
 
         # Streamlit app layout
-        st.title("Swahili Pronouns Quiz")
+        st.title("Test Your Knowledge")
 
         # Create input fields for each pronoun
         for pronoun, (sentence, translation) in pronouns.items():
