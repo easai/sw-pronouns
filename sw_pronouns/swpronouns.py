@@ -1,5 +1,6 @@
 class SWPronouns:
     def __init__(self, selection):
+        self.selection=selection
         # Define the personal pronouns in English and Swahili along with audio links
         self.pronouns = {
             "1st Person": {
@@ -196,3 +197,25 @@ class SWPronouns:
                     }
                 }
             }
+    
+    def test(self):
+        lst = {}
+        if self.selection == "Independent":
+            lst = {
+                "Mimi": ("___ ni mwanafunzi.", "I am a student."),
+                "Wewe": ("___ ni daktari.", "You are a doctor."),
+                "Yeye": ("___ ni mwalimu.", "He/She is a teacher."),
+                "Sisi": ("___ tunapenda kujifunza.", "We love to learn."),
+                "Ninyi": ("___ mnaweza kusaidia.", "You all can help."),
+                "Wao": ("___ wanacheka.", "They are laughing.")
+            }
+        elif self.selection == "Subject Concord Positive":
+            lst = {
+                "Ni": ("__naenda sokoni.","I am going to the market."),
+                "U": ("_nakula chakula.","You are eating food."),
+                "A": ("_nasoma kitabu.","He/She is reading a book."),
+                "Tu":("__nacheza mpira.","We are playing football."),
+                "M": ("_napika chakula.", "You all are cooking food."),
+                "Wa": ("__nakimbia haraka.", "They are running fast.")
+            }
+        return lst

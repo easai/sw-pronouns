@@ -2,17 +2,7 @@ import streamlit as st
 
 
 class SWTest:
-    def __init__(self):
-
-        # Define a list of pronouns with corresponding sentences and their English translations
-        pronouns = {
-            "Mimi": ("___ ni mwanafunzi.", "I am a student."),
-            "Wewe": ("___ ni daktari.", "You are a doctor."),
-            "Yeye": ("___ ni mwalimu.", "He/She is a teacher."),
-            "Sisi": ("___ tunapenda kujifunza.", "We love to learn."),
-            "Ninyi": ("___ mnaweza kusaidia.", "You all can help."),
-            "Wao": ("___ wanacheka.", "They are laughing.")
-        }
+    def __init__(self, pronouns):
 
         # Streamlit app layout
         st.title("Test Your Knowledge")

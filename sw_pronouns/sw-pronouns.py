@@ -8,7 +8,7 @@ from swdesc import SWDesc
 
 
 def clear_inputs():
-    for person, forms in pronouns.items():
+    for person, _ in pronouns.items():
         col1, col2 = st.columns(2)
 
         with col1:
@@ -19,7 +19,8 @@ def clear_inputs():
 pronouns_selectbox = st.sidebar.selectbox("Pronouns Quizzes", ("Independent", "Subject Concord Positive",
                                           "Subject Concord Negative", "Object Concord", "Possessive"), on_change=clear_inputs)
 
-pronouns = SWPronouns(pronouns_selectbox).pronouns
+swpronouns = SWPronouns(pronouns_selectbox)
+pronouns = swpronouns.pronouns
 
 # Streamlit app title
 st.title("Swahili Pronouns")
@@ -33,5 +34,7 @@ SWTable(pronouns)
 
 SWQuiz(pronouns)
 
-if pronouns_selectbox == "Independent":
-    swquiz = SWTest()
+test=swpronouns.test()
+
+if test != "":
+    swquiz = SWTest(test)
