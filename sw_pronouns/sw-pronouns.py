@@ -27,14 +27,16 @@ st.title("Swahili Pronouns")
 st.write("Challenge yourself with our Swahili pronouns quizzes and tests, and see how much you know! The app can test various aspects of Swahili pronouns, including independent, subject concord positive, subject concord negative, object concord, and possessive forms.")
 st.subheader(pronouns_selectbox)
 
+# Side menu
 SWDesc(pronouns_selectbox)
 
 # Accordion for the pronoun table
 SWTable(pronouns)
 
+# Pronouns table quiz
 SWQuiz(pronouns)
 
+# Fill-in-the-box test
 test=swpronouns.test()
-
 if test != "":
     swquiz = SWTest(test)
