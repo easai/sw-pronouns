@@ -227,4 +227,14 @@ class SWPronouns:
                 "Ham": ("___piki chakula.", "You all are not cooking food."),
                 "Hawa": ("____kimbii haraka.", "They are not running fast.")
             }
+        elif self.selection == "Possessive":
+            lst = {
+                "yangu": ("Hii ni nyumba _____.", "This is my house."),
+                "yako": ("Hii ni kalamu ____.", "This is your pen."),
+                "yake": ("Hii ni gari ____.", "This is his/her car."),
+                "yetu": ("Hii ni shule ____.", "This is our school."),
+                "yenu": ("Hii ni bustani ____.", "This is your (plural) garden."),
+                "yao": ("Hii ni nyumba ___.", "This is their house.")
+            }
+
         return lst
