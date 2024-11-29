@@ -231,7 +231,7 @@ class SWPronouns:
             lst = {
                 "1s": ("ni", "Ana__ona.", "He/She sees me."),
                 "2s": ("ku", "Nina__sikia.", "I hear you."),
-                "3s": ("m", "Nina__ona.", "I see him/her."),
+                "3s": ("m", "Nina_peleka.", "I am taking him/her,"),
                 "1p": ("tu", "Wana__saidia.", "They are helping us."),
                 "2p": ("wa", "Wana__penda.", "They love you all."),
                 "3p": ("wa", "Tuna__saidia.", "We are helping them.")
