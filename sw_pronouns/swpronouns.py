@@ -202,39 +202,51 @@ class SWPronouns:
         lst = {}
         if self.selection == "Independent":
             lst = {
-                "Mimi": ("___ ni mwanafunzi.", "I am a student."),
-                "Wewe": ("___ ni daktari.", "You are a doctor."),
-                "Yeye": ("___ ni mwalimu.", "He/She is a teacher."),
-                "Sisi": ("___ tunapenda kujifunza.", "We love to learn."),
-                "Ninyi": ("___ mnaweza kusaidia.", "You all can help."),
-                "Wao": ("___ wanacheka.", "They are laughing.")
+                "1s": ("Mimi", "___ ni mwanafunzi.", "I am a student."),
+                "2s": ("Wewe", "___ ni daktari.", "You are a doctor."),
+                "3s": ("Yeye", "___ ni mwalimu.", "He/She is a teacher."),
+                "1p": ("Sisi", "___ tunapenda kujifunza.", "We love to learn."),
+                "2p": ("Ninyi", "___ mnaweza kusaidia.", "You all can help."),
+                "3p": ("Wao", "___ wanacheka.", "They are laughing.")
             }
         elif self.selection == "Subject Concord Positive":
             lst = {
-                "Ni": ("__naenda sokoni.", "I am going to the market."),
-                "U": ("_nakula chakula.", "You are eating food."),
-                "A": ("_nasoma kitabu.", "He/She is reading a book."),
-                "Tu": ("__nacheza mpira.", "We are playing football."),
-                "M": ("_napika chakula.", "You all are cooking food."),
-                "Wa": ("__nakimbia haraka.", "They are running fast.")
+                "1s": ("Ni", "__naenda sokoni.", "I am going to the market."),
+                "2s": ("U", "_nakula chakula.", "You are eating food."),
+                "3s": ("A", "_nasoma kitabu.", "He/She is reading a book."),
+                "1p": ("Tu", "__nacheza mpira.", "We are playing football."),
+                "2p": ("M", "_napika chakula.", "You all are cooking food."),
+                "3p": ("Wa", "__nakimbia haraka.", "They are running fast.")
             }
         elif self.selection == "Subject Concord Negative":
             lst = {
-                "Si": ("__endi sokoni.", "I am not going to the market."),
-                "Hu": ("__li chakula.", "You are not eating food."),
-                "Ha": ("__somi kitabu.", "He/She is not reading a book."),
-                "Hatu": ("____chezi mpira.", "We are not playing football."),
-                "Ham": ("___piki chakula.", "You all are not cooking food."),
-                "Hawa": ("____kimbii haraka.", "They are not running fast.")
+                "1s": ("Si", "__endi sokoni.", "I am not going to the market."),
+                "2s": ("Hu", "__li chakula.", "You are not eating food."),
+                "3s": ("Ha", "__somi kitabu.", "He/She is not reading a book."),
+                "1p": ("Hatu", "____chezi mpira.", "We are not playing football."),
+                "2p": ("Ham", "___piki chakula.", "You all are not cooking food."),
+                "3p": ("Hawa", "____kimbii haraka.", "They are not running fast.")
+            }
+        elif self.selection == "Object Concord":
+            lst = {
+                "1s": ("ni", "Ana__ona.", "He/She sees me."),
+                "2s": ("ku", "Nina__sikia.", "I hear you."),
+                "3s": ("m", "Nina__ona.", "I see him/her."),
+                "1p": ("tu", "Wana__saidia.", "They are helping us."),
+                "2p": ("wa", "Wana__penda.", "They love you all."),
+                "3p": ("wa", "Tuna__saidia.", "We are helping them.")
             }
         elif self.selection == "Possessive":
             lst = {
-                "yangu": ("Hii ni nyumba _____.", "This is my house."),
-                "yako": ("Hii ni kalamu ____.", "This is your pen."),
-                "yake": ("Hii ni gari ____.", "This is his/her car."),
-                "yetu": ("Hii ni shule ____.", "This is our school."),
-                "yenu": ("Hii ni bustani ____.", "This is your (plural) garden."),
-                "yao": ("Hii ni nyumba ___.", "This is their house.")
+                "1s": ("yangu", "Hii ni nyumba _____.", "This is my house."),
+                "2s": ("yako", "Hii ni kalamu ____.", "This is your pen."),
+                "3s": ("yake", "Hii ni gari ____.", "This is his/her car."),
+                "1p": ("yetu", "Hii ni shule ____.", "This is our school."),
+                "2p": ("yenu", "Hii ni bustani ____.", "This is your (plural) garden."),
+                "3p": ("yao", "Hii ni nyumba ___.", "This is their house.")
             }
+
+
+
 
         return lst
