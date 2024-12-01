@@ -12,9 +12,10 @@ def clear_inputs():
         col1, col2 = st.columns(2)
 
         with col1:
-            st.session_state[f"singular_{person}"] =""
+            st.session_state[f"singular_{person}"] = ""
         with col2:
             st.session_state[f"plural_{person}"] = ''
+
 
 pronouns_selectbox = st.sidebar.selectbox("Pronouns Quizzes", ("Independent", "Subject Concord Positive",
                                           "Subject Concord Negative", "Object Concord", "Possessive"), on_change=clear_inputs)
@@ -37,6 +38,6 @@ SWTable(pronouns)
 SWQuiz(pronouns)
 
 # Fill-in-the-box test
-test=swpronouns.test()
+test = swpronouns.test()
 if test != "":
     swquiz = SWTest(test)

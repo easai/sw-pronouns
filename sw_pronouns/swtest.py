@@ -17,5 +17,3 @@ class SWTest:
                     st.success(f"Correct! The answer is '{answer}'.")
                 else:
                     st.error(f"Incorrect! The correct answer is '{answer}'.")
-
-

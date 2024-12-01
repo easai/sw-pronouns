@@ -246,7 +246,4 @@ class SWPronouns:
                 "3p": ("yao", "Hii ni nyumba ___.", "This is their house.")
             }
 
-
-
-
         return lst
