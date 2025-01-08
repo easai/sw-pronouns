@@ -1,43 +1,47 @@
 import streamlit as st
 import pandas as pd
-from swtest import SWTest
-from swtable import SWTable
-from swquiz import SWQuiz
-from swpronouns import SWPronouns
-from swdesc import SWDesc
+from test import PronounTest
+from table import PronounTable
+from quiz import PronounQuiz
+from data import PronounData
+from const import TITLE, DESC
+
+st.set_page_config(
+    page_title=TITLE,
+    page_icon="📝",
+    layout="centered",
+    initial_sidebar_state="auto",
+)
 
 
-def clear_inputs():
-    for person, _ in pronouns.items():
-        col1, col2 = st.columns(2)
-
-        with col1:
-            st.session_state[f"singular_{person}"] = ""
-        with col2:
-            st.session_state[f"plural_{person}"] = ''
+def clear_ending_with_input():
+    for key in list(st.session_state.keys()):
+        if key.endswith("_input"):
+            st.session_state[key] = ""
 
 
-pronouns_selectbox = st.sidebar.selectbox("Pronouns Quizzes", ("Independent", "Subject Concord Positive",
-                                          "Subject Concord Negative", "Object Concord", "Possessive"), on_change=clear_inputs)
-
-swpronouns = SWPronouns(pronouns_selectbox)
-pronouns = swpronouns.pronouns
+pronounData = PronounData()
+menu = pronounData.get_menu()
+selected_item = st.sidebar.selectbox(
+    TITLE, menu, on_change=clear_ending_with_input)
+menuIndex = menu.index(selected_item)
+table = pronounData.get_table(menuIndex)
 
 # Streamlit app title
-st.title("Swahili Pronouns")
-st.write("Challenge yourself with our Swahili pronouns quizzes and tests, and see how much you know! The app can test various aspects of Swahili pronouns, including independent, subject concord positive, subject concord negative, object concord, and possessive forms.")
-st.subheader(pronouns_selectbox)
+st.title(TITLE)
+st.write(DESC)
+st.subheader(selected_item)
 
 # Side menu
-SWDesc(pronouns_selectbox)
+st.write(pronounData.get_desc(menuIndex))
 
 # Accordion for the pronoun table
-SWTable(pronouns)
+PronounTable(table)
 
 # Pronouns table quiz
-SWQuiz(pronouns)
+PronounQuiz(table)
 
 # Fill-in-the-box test
-test = swpronouns.test()
+test = pronounData.get_test(menuIndex)
 if test != "":
-    swquiz = SWTest(test)
+    PronounTest(test)
